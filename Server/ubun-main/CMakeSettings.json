@@ -1,0 +1,48 @@
+﻿{
+  "configurations": [
+    {
+      "name": "x64-Debug",
+      "generator": "Ninja",
+      "configurationType": "Debug",
+      "inheritEnvironments": [ "msvc_x64_x64" ],
+      "buildRoot": "${projectDir}\\build\\${name}",
+      "installRoot": "${projectDir}\\out\\install\\${name}",
+      "cmakeCommandArgs": "",
+      "buildCommandArgs": "",
+      "ctestCommandArgs": ""
+    },
+    {
+      "name": "x86-Debug",
+      "generator": "Ninja",
+      "configurationType": "Debug",
+      "buildRoot": "${projectDir}\\build\\${name}",
+      "installRoot": "${projectDir}\\out\\install\\${name}",
+      "cmakeCommandArgs": "",
+      "buildCommandArgs": "",
+      "ctestCommandArgs": "",
+      "inheritEnvironments": [ "msvc_x86" ],
+      "variables": [
+        {
+          "name": "PocoXML_DIR",
+          "value": "C:/Users/monta/OneDrive/Desktop/POCO/poco/out/build/x86-Debug/Poco",
+          "type": "PATH"
+        },
+        {
+          "name": "CMAKE_INSTALL_PREFIX",
+          "value": "C:/Users/monta/source/repos/DDM_PFE/install/x86-Debug",
+          "type": "PATH"
+        },
+        {
+          "name": "PCAN_INCLUDE_DIR",
+          "value": "C:/Users/monta/Downloads/PCAN-ISO-TP/Include",
+          "type": "PATH"
+        },
+        {
+          "name": "PCAN_LIBRARY",
+          "value": "C:/Users/monta/Downloads/PCAN-ISO-TP/x86/VC_LIB/PCAN-ISO-TP.lib",
+          "type": "FILEPATH"
+        }
+      ]
+    }
+  ]
+}
