@@ -1,0 +1,13 @@
+<RCC>
+    <qresource prefix="/ResPicture">
+        <file>img/10.jpg</file>
+        <file>img/Asam_f_simulation_neu.svg</file>
+        <file>img/Not_connect.png</file>
+        <file>img/connected.png</file>
+    </qresource>
+    <qresource prefix="/File">
+        <file>file/DID.xml</file>
+        <file>file/fault.json</file>
+        <file>file/data.json</file>
+    </qresource>
+</RCC>

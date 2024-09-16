@@ -1,0 +1,52 @@
+{
+  "DataIdentifier": [
+    {
+      "id": "vin",
+      "name": "Vehicle Identification Number",
+      "category": "identData",
+      "data": "8GHV3CT0RGTH1CLKM"
+    },
+    {
+      "id": "swversion",
+      "name": "Software Version",
+      "category": "identData",
+      "data": "0002"
+    },
+    {
+      "id": "odx",
+      "name": "ODX File",
+      "category": "identData",
+      "data": "ODXFile.xml" 
+    },
+    {
+      "id": "egtype",
+      "name": "Engine Type",
+      "category": "identData",
+      "data": "ECM"
+    },
+    {
+      "id": "ecuinstallation",
+      "name": "ECU Installation Date",
+      "category": "identData",
+      "data": ""
+    },
+    {
+      "id": "udsver",
+      "name": "UDS Version",
+      "category": "identData",
+      "data": "ISO 14229-1"
+    },
+    {
+      "id": "prg",
+      "name": "Programming",
+      "category": "identData",
+      "data": ""
+    },
+    {
+      "id": "activeDiagSes",
+      "name": "Active Diagnostic Session",
+      "category": "identData",
+      "data": ""
+    }
+  ]
+}

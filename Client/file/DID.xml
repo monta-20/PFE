@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+<FUNC-GROUP name="Diagnostic and Communications Management">
+<SID NAME="DSC" value ="0x10" 	DES="Diagnostic Session Control">
+       <SUB-FUNC Name="Default session" VALUE="0x01">
+	      On start , the ECU is by default session
+	    </SUB-FUNC>
+		<SUB-FUNC Name="Programming Session" VALUE="0x02">
+	     Used to upload software
+	    </SUB-FUNC>
+		<SUB-FUNC Name="Extended Diagnostic Session" VALUE="0x03">
+	     Used to unlock additional diagnostic functions, such as the adjustment of sensors.
+	    </SUB-FUNC>
+		<SUB-FUNC Name="Safety system diagnostic session" VALUE="0x04">
+	     Used to test all safety-critical diagnostic functions, such as airbag tests.
+	    </SUB-FUNC>	
+</SID>
+<SID NAME="ECUR" value ="0x11" 	DES="ECU Reset">
+       <SUB-FUNC Name="Hard Reset" VALUE="0x01">
+	       Simulates a shutdown of the power supply
+	    </SUB-FUNC>
+		<SUB-FUNC Name="key off on Reset" VALUE="0x02">
+	    Simulates the drain and turn on the ignition with the key
+	    </SUB-FUNC>
+		<SUB-FUNC Name="Soft Reset" VALUE="0x03">
+	     Allows the initialization of certain program units and their storage structures
+	    </SUB-FUNC>
+</SID>
+<SID NAME="SA" value ="0x27" 	DES="Security Access">
+</SID>
+<SID NAME="CC" value ="0x28" 	DES="Communication Control">
+</SID>
+<SID NAME="Auth" value ="0x29" 	DES="Authentication">
+</SID>
+<SID NAME="TP" value ="0x3E" 	DES="Tester Present">
+</SID>
+<SID NAME="ATP" value ="0x83" 	DES="Access Timing Parameters">
+</SID>
+<SID NAME="SDT" value ="0x84" 	DES="Secured Data Transmission">
+</SID>
+<SID NAME="CDTCS" value ="0x85" 	DES="Control DTC Settings">
+</SID>
+<SID NAME="RONE" value ="0x86" 	DES="Response On Event">
+</SID>
+<SID NAME="LC" value ="0x87" 	DES="Link Control">
+</SID>
+</FUNC-GROUP>
+
+
+<FUNC-GROUP name="Data Transmission">
+
+<SID NAME="RDBI" value ="0x22" 	DES="Read Data By Identifier">
+<SUB-FUNC Name="Vehicle Manufacturer Specific" VALUE="0xF0F0">
+                This  value shall be used to reference vehicle manufacturer specific record data identifiers
+                and input/output identifiers within the server.
+        </SUB-FUNC>
+      <SUB-FUNC Name="Boot Software Identification Data Identifier" VALUE="0xF180">
+        The vehicle manufacturer’s specific ECU boot software identification record will be referenced using this value.
+		The record data’s first byte will indicate the number of reported modules. 
+      </SUB-FUNC>
+          <SUB-FUNC Name="Application Software Identification Data Identifier" VALUE="0xF181">
+	     The vehicle manufacturer’s specific ECU application software numbers will be referenced using this value.
+		 The record data’s first byte will indicate the number of reported modules. 
+	   </SUB-FUNC>	 
+           <SUB-FUNC Name="Application Data Identification Data Identifier" VALUE="0xF182">
+	     The vehicle manufacturer’s specific ECU application software numbers will be referenced using this value.
+		 The record data’s first byte will indicate the number of reported modules. 
+	   </SUB-FUNC>	 
+           <SUB-FUNC Name="Boot Software Finger-print Data Identifier" VALUE="0xF183">
+	     This value shall be used to reference the vehicle manufacturer-specific ECU boot software fingerprint identification record. 
+	   </SUB-FUNC>	 
+           <SUB-FUNC Name="Application Software Identification Data Identifier" VALUE="0xF184">
+	    The vehicle manufacturer’s specific ECU application software fingerprint identification record will be referenced using this value.  
+	   </SUB-FUNC>	 
+           <SUB-FUNC Name="Application Data Fingerprint Data Identifier" VALUE="0xF185">
+	    The vehicle manufacturer’s specific ECU application data fingerprint identification record will be referenced using this value.
+		The record data’s content and format is determined by the vehicle manufacturer and is specific to the ECU.  
+	   </SUB-FUNC>	 
+           <SUB-FUNC Name="Active Diagnostic Session Data Identifier" VALUE="0xF186">
+	     This value will be used to indicate the current active diagnostic session on the server. The specific session type will be defined by
+		 the “diagnosticSessionType” subfunction parameter in the DiagnosticSessionControl service.
+	   </SUB-FUNC>	 
+           <SUB-FUNC Name="Vehicle Manufacturer Spare Part Number Data Identifier" VALUE="0xF187">
+	     This value will be used to reference the vehicle manufacturer’s specific spare part number.
+		 The record data’s content and format is determined by the server and is specific to the vehicle manufacturer.
+	   </SUB-FUNC>	 
+           <SUB-FUNC Name="Vehicle Manufacturer ECU Software Number Data Identifier" VALUE="0xF188">
+	     This value will be used to reference the vehicle manufacturer’s specific spare part number.
+		 The record data’s content and format is determined by the server and is specific to the vehicle manufacturer 
+	   </SUB-FUNC>	 
+           <SUB-FUNC Name="Vehicle Manufacturer ECU Software Version Number Data Identifier" VALUE="0xF189">
+	     This value will be used to reference the vehicle manufacturer’s specific ECU (server) software version number.
+		 The record data’s content and format is determined by the server and is specific to the vehicle manufacturer.
+	   </SUB-FUNC>	 
+           <SUB-FUNC Name="System Supplier Identifier Data Identifier" VALUE="0xF18A">
+	     This value will be used to reference the system supplier’s name and address information.
+		 The record data’s content and format is determined by the server and is specific to the system supplier.
+	   </SUB-FUNC>	
+       <SUB-FUNC Name="ECU Manufacturing Date Data Identifier" VALUE="0xF18B">
+	    This value will be used to reference the ECU (server) manufacturing date.
+		The record data will be in the form of an unsigned numeric, ASCII or BCD format, and will be arranged in the order of Year, Month, Day. 
+	   </SUB-FUNC>	
+      <SUB-FUNC Name="ECU Serial Number Data Identifier" VALUE="0xF18C">
+	     This value will be used to reference the ECU (server) serial number. The record data’s content and format is determined by the server.
+	   </SUB-FUNC>	
+       <SUB-FUNC Name="Supported Functional Units Data Identifier" VALUE="0xF18D">
+	   This value will be used to request the functional units that are implemented in a server. 
+	   </SUB-FUNC>	
+       <SUB-FUNC Name="Vehicle Manufacturer Kit Assembly Part Number Data Identifier" VALUE="0xF18E">
+	     This value will be used to reference the vehicle manufacturer’s order number for a kit,
+		 which is a collection of assembled parts purchased as a whole for production, such as a cockpit.
+	   </SUB-FUNC>	
+       <SUB-FUNC Name="ISO SAE Reserved Standardized" VALUE="0xF18F">
+	     This range of values shall be reserved by this document for future definition of standardized server/vehicleIdentification options. 
+	   </SUB-FUNC>	
+       <SUB-FUNC Name="VIN Data Identifier" VALUE="0xF190">
+	     This value shall be used to reference the VIN number. Record data content and format shall be specified by the vehicle manufacturer. 
+	   </SUB-FUNC>	
+       <SUB-FUNC Name="Vehicle Manufacturer ECU Hardware Number Data Identifier" VALUE="0xF191">
+	    This value will be used by reading services to reference the vehicle manufacturer’s specific ECU (server) hardware number.
+		The record data’s content and format is determined by the server and is specific to the vehicle manufacturer.
+	   </SUB-FUNC>	
+       <SUB-FUNC Name="System Supplier ECU Hardware Number Data Identifier" VALUE="0xF192">
+	     This value shall be used to reference the system supplier specific ECU (server) hardware number.
+		 Record data content and format shall be server specific and defined by the system supplier.
+	   </SUB-FUNC>	
+       <SUB-FUNC Name="System Supplier ECU Hardware Version Number Data Identifier" VALUE="0xF193">
+	     This value shall be used to reference the system supplier specific ECU (server) hardware version number.
+		 Record data content and format shall be server specific and defined by the system supplier.
+	   </SUB-FUNC>	
+       <SUB-FUNC Name="System Supplier ECU Software Number Data Identifier" VALUE="0xF194">
+	     This value will be used to reference the system supplier’s specific ECU (server) software number.
+		 The record data’s content and format is determined by the server and is specific to the system supplier. 
+	   </SUB-FUNC>	
+       <SUB-FUNC Name="System Supplier ECU Software Version Number Data Identifier" VALUE="0xF195">
+	     This value shall be used to reference the system supplier specific ECU (server) software version number.
+		 Record data content and format shall be server specific and defined by the system supplier. 
+	   </SUB-FUNC>	
+       <SUB-FUNC Name="Exhaust Regulation Or Type Approval Number Data Identifier" VALUE="0xF196">
+	     This value shall be used to reference the exhaust regulation or type approval number (valid for those systems which require type approval). 
+	   </SUB-FUNC>	
+       <SUB-FUNC Name="System Name Or Engine Type Data Identifier" VALUE="0xF197">
+	     This value will be used to reference the system name or engine type. The record data’s content and format is determined by the server and is specific to the vehicle manufacturer.
+	   </SUB-FUNC>
+       <SUB-FUNC Name="Repair Shop Code Or Tester Serial Number Data Identifier" VALUE="0xF198">
+	     This value shall be used to reference the repair shop code or tester (client) serial number (e.g., to indicate the most recent service client used re-program server memory).
+	   </SUB-FUNC>
+		 shall be unsigned numeric, ASCII or BCD, and the order shall be Year, Month, Day.
+       <SUB-FUNC Name="Programming Date Data Identifier" VALUE="0xF199">
+	     The date of the last programming of the server shall be referenced using this value. The format of the recorded data
+	   </SUB-FUNC>
+       <SUB-FUNC Name="Calibration Repair Shop Code Or Calibration Equipment Serial Number" VALUE="0xF19A">
+	     The repair shop code or client serial number for the most recent calibration service shall be referenced using this value.
+	   </SUB-FUNC>
+       <SUB-FUNC Name="Calibration Date Data Identifier" VALUE="0xF19B">
+	     The date of the last calibration of the server shall be referenced using this value. The format of the recorded data shall
+		 be unsigned numeric, ASCII or BCD, and the order shall be Year, Month, Day.
+	   </SUB-FUNC>
+       <SUB-FUNC Name="Calibration Equipment Software Number Data Identifier" VALUE="0xF19C">
+	     The software version used by the client to calibrate the server shall be referenced using this value. 
+	   </SUB-FUNC>
+       <SUB-FUNC Name="ECU Installation Date Data Identifier" VALUE="0xF19D">
+	     The date of the ECU (server) installation in the vehicle shall be referenced using this value. The format of the recorded data shall be either unsigned numeric, ASCII or BCD, and the order shall be Year, Month, Day.
+	   </SUB-FUNC>
+       <SUB-FUNC Name="ODX File Data Identifier" VALUE="0xF19E">
+	     This value shall be used to reference the ODX (Open Diagnostic Data Exchange) file that will be used to interpret and scale the server data.
+	   </SUB-FUNC>
+       <SUB-FUNC Name="Entity Data Identifier" VALUE="0xF19F">
+	     This value shall be used to reference the entity data identifier for a secured data transmission.
+	   </SUB-FUNC>
+      
+</SID>
+<SID NAME="RMBA" value ="0x23" 	DES="Read Memory By Address">
+</SID>
+<SID NAME="RSDBI" value ="0x24" 	DES="Read Scaling Data By Identifier">
+</SID>
+<SID NAME="RDBIP" value ="0x2A" 	DES="Read Data By Identifier Periodic">
+</SID>
+<SID NAME="WDBI" value ="0x2E" 	DES="Write Data By Identifier">
+<SUB-FUNC Name="Vehicle Manufacturer Specific" VALUE="0xF0F0">
+                This  value shall be used to reference vehicle manufacturer specific record data identifiers
+                and input/output identifiers within the server.
+        </SUB-FUNC>
+      <SUB-FUNC Name="Boot Software Identification Data Identifier" VALUE="0xF180">
+        The vehicle manufacturer’s specific ECU boot software identification record will be referenced using this value.
+                The record data’s first byte will indicate the number of reported modules.
+      </SUB-FUNC>
+          <SUB-FUNC Name="Application Software Identification Data Identifier" VALUE="0xF181">
+             The vehicle manufacturer’s specific ECU application software numbers will be referenced using this value.
+                 The record data’s first byte will indicate the number of reported modules.
+           </SUB-FUNC>
+           <SUB-FUNC Name="Application Data Identification Data Identifier" VALUE="0xF182">
+             The vehicle manufacturer’s specific ECU application software numbers will be referenced using this value.
+                 The record data’s first byte will indicate the number of reported modules.
+           </SUB-FUNC>
+           <SUB-FUNC Name="Boot Software Finger-print Data Identifier" VALUE="0xF183">
+             This value shall be used to reference the vehicle manufacturer-specific ECU boot software fingerprint identification record.
+           </SUB-FUNC>
+           <SUB-FUNC Name="Application Software Identification Data Identifier" VALUE="0xF184">
+            The vehicle manufacturer’s specific ECU application software fingerprint identification record will be referenced using this value.
+           </SUB-FUNC>
+           <SUB-FUNC Name="Application Data Fingerprint Data Identifier" VALUE="0xF185">
+            The vehicle manufacturer’s specific ECU application data fingerprint identification record will be referenced using this value.
+                The record data’s content and format is determined by the vehicle manufacturer and is specific to the ECU.
+           </SUB-FUNC>
+           <SUB-FUNC Name="Active Diagnostic Session Data Identifier" VALUE="0xF186">
+             This value will be used to indicate the current active diagnostic session on the server. The specific session type will be defined by
+                 the “diagnosticSessionType” subfunction parameter in the DiagnosticSessionControl service.
+           </SUB-FUNC>
+           <SUB-FUNC Name="Vehicle Manufacturer Spare Part Number Data Identifier" VALUE="0xF187">
+             This value will be used to reference the vehicle manufacturer’s specific spare part number.
+                 The record data’s content and format is determined by the server and is specific to the vehicle manufacturer.
+           </SUB-FUNC>
+           <SUB-FUNC Name="Vehicle Manufacturer ECU Software Number Data Identifier" VALUE="0xF188">
+             This value will be used to reference the vehicle manufacturer’s specific spare part number.
+                 The record data’s content and format is determined by the server and is specific to the vehicle manufacturer
+           </SUB-FUNC>
+           <SUB-FUNC Name="Vehicle Manufacturer ECU Software Version Number Data Identifier" VALUE="0xF189">
+             This value will be used to reference the vehicle manufacturer’s specific ECU (server) software version number.
+                 The record data’s content and format is determined by the server and is specific to the vehicle manufacturer.
+           </SUB-FUNC>
+           <SUB-FUNC Name="System Supplier Identifier Data Identifier" VALUE="0xF18A">
+             This value will be used to reference the system supplier’s name and address information.
+                 The record data’s content and format is determined by the server and is specific to the system supplier.
+           </SUB-FUNC>
+       <SUB-FUNC Name="ECU Manufacturing Date Data Identifier" VALUE="0xF18B">
+            This value will be used to reference the ECU (server) manufacturing date.
+                The record data will be in the form of an unsigned numeric, ASCII or BCD format, and will be arranged in the order of Year, Month, Day.
+           </SUB-FUNC>
+      <SUB-FUNC Name="ECU Serial Number Data Identifier" VALUE="0xF18C">
+             This value will be used to reference the ECU (server) serial number. The record data’s content and format is determined by the server.
+           </SUB-FUNC>
+       <SUB-FUNC Name="Supported Functional Units Data Identifier" VALUE="0xF18D">
+           This value will be used to request the functional units that are implemented in a server.
+           </SUB-FUNC>
+       <SUB-FUNC Name="Vehicle Manufacturer Kit Assembly Part Number Data Identifier" VALUE="0xF18E">
+             This value will be used to reference the vehicle manufacturer’s order number for a kit,
+                 which is a collection of assembled parts purchased as a whole for production, such as a cockpit.
+           </SUB-FUNC>
+       <SUB-FUNC Name="ISO SAE Reserved Standardized" VALUE="0xF18F">
+             This range of values shall be reserved by this document for future definition of standardized server/vehicleIdentification options.
+           </SUB-FUNC>
+       <SUB-FUNC Name="VIN Data Identifier" VALUE="0xF190">
+             This value shall be used to reference the VIN number. Record data content and format shall be specified by the vehicle manufacturer.
+           </SUB-FUNC>
+       <SUB-FUNC Name="Vehicle Manufacturer ECU Hardware Number Data Identifier" VALUE="0xF191">
+            This value will be used by reading services to reference the vehicle manufacturer’s specific ECU (server) hardware number.
+                The record data’s content and format is determined by the server and is specific to the vehicle manufacturer.
+           </SUB-FUNC>
+       <SUB-FUNC Name="System Supplier ECU Hardware Number Data Identifier" VALUE="0xF192">
+             This value shall be used to reference the system supplier specific ECU (server) hardware number.
+                 Record data content and format shall be server specific and defined by the system supplier.
+           </SUB-FUNC>
+       <SUB-FUNC Name="System Supplier ECU Hardware Version Number Data Identifier" VALUE="0xF193">
+             This value shall be used to reference the system supplier specific ECU (server) hardware version number.
+                 Record data content and format shall be server specific and defined by the system supplier.
+           </SUB-FUNC>
+       <SUB-FUNC Name="System Supplier ECU Software Number Data Identifier" VALUE="0xF194">
+             This value will be used to reference the system supplier’s specific ECU (server) software number.
+                 The record data’s content and format is determined by the server and is specific to the system supplier.
+           </SUB-FUNC>
+       <SUB-FUNC Name="System Supplier ECU Software Version Number Data Identifier" VALUE="0xF195">
+             This value shall be used to reference the system supplier specific ECU (server) software version number.
+                 Record data content and format shall be server specific and defined by the system supplier.
+           </SUB-FUNC>
+       <SUB-FUNC Name="Exhaust Regulation Or Type Approval Number Data Identifier" VALUE="0xF196">
+             This value shall be used to reference the exhaust regulation or type approval number (valid for those systems which require type approval).
+           </SUB-FUNC>
+       <SUB-FUNC Name="System Name Or Engine Type Data Identifier" VALUE="0xF197">
+             This value will be used to reference the system name or engine type. The record data’s content and format is determined by the server and is specific to the vehicle manufacturer.
+           </SUB-FUNC>
+       <SUB-FUNC Name="Repair Shop Code Or Tester Serial Number Data Identifier" VALUE="0xF198">
+             This value shall be used to reference the repair shop code or tester (client) serial number (e.g., to indicate the most recent service client used re-program server memory).
+           </SUB-FUNC>
+                 shall be unsigned numeric, ASCII or BCD, and the order shall be Year, Month, Day.
+       <SUB-FUNC Name="Programming Date Data Identifier" VALUE="0xF199">
+             The date of the last programming of the server shall be referenced using this value. The format of the recorded data
+           </SUB-FUNC>
+       <SUB-FUNC Name="Calibration Repair Shop Code Or Calibration Equipment Serial Number" VALUE="0xF19A">
+             The repair shop code or client serial number for the most recent calibration service shall be referenced using this value.
+           </SUB-FUNC>
+       <SUB-FUNC Name="Calibration Date Data Identifier" VALUE="0xF19B">
+             The date of the last calibration of the server shall be referenced using this value. The format of the recorded data shall
+                 be unsigned numeric, ASCII or BCD, and the order shall be Year, Month, Day.
+           </SUB-FUNC>
+       <SUB-FUNC Name="Calibration Equipment Software Number Data Identifier" VALUE="0xF19C">
+             The software version used by the client to calibrate the server shall be referenced using this value.
+           </SUB-FUNC>
+       <SUB-FUNC Name="ECU Installation Date Data Identifier" VALUE="0xF19D">
+             The date of the ECU (server) installation in the vehicle shall be referenced using this value. The format of the recorded data shall be either unsigned numeric, ASCII or BCD, and the order shall be Year, Month, Day.
+           </SUB-FUNC>
+       <SUB-FUNC Name="ODX File Data Identifier" VALUE="0xF19E">
+             This value shall be used to reference the ODX (Open Diagnostic Data Exchange) file that will be used to interpret and scale the server data.
+           </SUB-FUNC>
+       <SUB-FUNC Name="Entity Data Identifier" VALUE="0xF19F">
+             This value shall be used to reference the entity data identifier for a secured data transmission.
+           </SUB-FUNC>
+</SID>
+<SID NAME="WMBA" value ="0x3D" 	DES="Write Memory By Address">
+</SID>
+</FUNC-GROUP>
+
+<FUNC-GROUP name="Stored Data Transmission">
+<SID NAME="CDI" value ="0x14" 	DES="Clear Diagnostic Information">
+</SID>
+<SID NAME="RDTCI" value ="0x19" 	DES="Read DTC Information">
+</SID>
+</FUNC-GROUP>
+
+<FUNC-GROUP name="Input / Output Control">
+<SID NAME="IOCBI" value ="0x2F" 	DES="Input Output Control By Identifier">
+</SID>
+</FUNC-GROUP>
+
+<FUNC-GROUP name="Remote Activation of Routine">
+<SID NAME="IOCBI" value ="0x31" 	DES="Routine Control">
+</SID>
+</FUNC-GROUP>
+
+<FUNC-GROUP name="Upload / Download">
+<SID NAME="RD" value ="0x34" 	DES="Request Download">
+</SID>
+<SID NAME="RU" value ="0x35" 	DES="Request Upload">
+</SID>
+<SID NAME="TD" value ="0x36" 	DES="Transfer Data">
+</SID>
+<SID NAME="RTE" value ="0x37" 	DES="Request Transfer Exit">
+</SID>
+<SID NAME="RFT" value ="0x38" 	DES="Request File Transfer">
+</SID>
+</FUNC-GROUP>
+</root>	

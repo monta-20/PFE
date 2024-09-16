@@ -1,0 +1,65 @@
+{
+  "faults": [
+    {
+
+      "id": "123401",
+      "scope": "Default",
+      "display_code": "P123401",
+      "fault_name": "O2 Sensor – Circuit Open",
+      "fault_translation_id": "ENGINE_123401_tid",
+      "severity": 1,
+      "status": {
+        "mask": "08",
+        "aggregatedStatus": "active"
+      }
+    },
+    {
+      "id": "456702",
+      "scope": "Default",
+      "display_code": "P456702",
+      "fault_name": "Catalytic Converter Efficiency Below Threshold",
+      "fault_translation_id": "ENGINE_456702_tid",
+      "severity": 2,
+      "status": {
+        "mask": "08",
+        "aggregatedStatus": "active"
+      }
+    },
+    {
+      "id": "789903",
+      "scope": "Default",
+      "display_code": "P789903",
+      "fault_name": "Engine Misfire Detected",
+      "fault_translation_id": "ENGINE_789903_tid",
+      "severity": 3,
+      "status": {
+        "mask": "08",
+        "aggregatedStatus": "active"
+      }
+    },
+    {
+      "id": "987654",
+      "scope": "Default",
+      "display_code": "P987654",
+      "fault_name": "Fault with Non-08 Status",
+      "fault_translation_id": "ENGINE_987654_tid",
+      "severity": 2,
+      "status": {
+        "mask": "05",
+        "aggregatedStatus": "inactive"
+      }
+    },
+    {
+      "id": "246801",
+      "scope": "Default",
+      "display_code": "P246801",
+      "fault_name": "Another Non-08 Status Fault",
+      "fault_translation_id": "ENGINE_246801_tid",
+      "severity": 1,
+      "status": {
+        "mask": "03",
+        "aggregatedStatus": "inactive"
+      }
+    }
+  ]
+}
